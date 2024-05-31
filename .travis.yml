@@ -3,10 +3,10 @@ services:
   - docker
 
 before_install: 
-  - docker build -t prashant/docker-react -f Dockerfile.dev . --progress plain
+  - docker build -t prashant/frontend -f Dockerfile.dev . --progress plain
 
 script: 
-  - docker run -e CI=true prashant/docker-react npm run test
+  - docker run -e CI=true prashant/frontend npm run test
 
 deploy:
   provider: elasticbeanstalk
